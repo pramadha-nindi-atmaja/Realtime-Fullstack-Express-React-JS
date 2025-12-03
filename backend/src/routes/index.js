@@ -2,12 +2,14 @@ import { Router } from "express";
 import productRouter from "./product.route.js";
 import { errorHandling, notFound } from "../controllers/error.controller.js";
 import userRouter from "./user.router.js";
+import orderRouter from "./order.route.js";
 
 const app = Router();
 
 // API routes
 app.use("/api", productRouter);
 app.use("/api", userRouter);
+app.use("/api", orderRouter);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
@@ -44,6 +46,13 @@ app.get("/api/docs", (req, res) => {
           delete: "/api/users/:id - Delete user (admin only)",
           getToken: "/api/users/:id/token - Get access token",
           refreshToken: "/api/refresh - Refresh token"
+        },
+        orders: {
+          get: "/api/orders - Get all orders",
+          getById: "/api/orders/:id - Get order by ID",
+          post: "/api/orders - Create a new order",
+          put: "/api/orders/:id - Update an order",
+          delete: "/api/orders/:id - Delete an order"
         },
         health: "/health - Server health check",
         docs: "/api/docs - API documentation"
