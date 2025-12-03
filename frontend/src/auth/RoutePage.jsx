@@ -4,6 +4,9 @@ import { jwtDecode } from "jwt-decode";
 import Home from "../components/Home.jsx";
 import AddProduct from "../components/AddProduct.jsx";
 import EditProduct from "../components/EditProduct.jsx";
+import OrderList from "../components/OrderList.jsx";
+import AddOrder from "../components/AddOrder.jsx";
+import EditOrder from "../components/EditOrder.jsx";
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
@@ -44,8 +47,11 @@ const RoutePage = async () => {
   // Declare routes
   const navItems = [
     { path: "/", element: <Home /> },
+    { path: "/orders", element: <OrderList /> },
     { path: "/add", element: <AddProduct /> },
     { path: "/edit/:id", element: <EditProduct /> },
+    { path: "/add-order", element: <AddOrder /> },
+    { path: "/edit-order/:id", element: <EditOrder /> },
   ];
 
   const buildNav = () => {
