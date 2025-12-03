@@ -35,12 +35,26 @@ const Home = () => {
   return (
     <div className="flex flex-col mt-5">
       <div className="w-full">
-        <Link
-          to={"/add"}
-          className="bg-green-500 border border-slate-text hover:bg-green-700 text-white py-1 px-3 rounded-lg"
-        >
-          Add New
-        </Link>
+        <div className="flex space-x-2 mb-3">
+          <Link
+            to={"/add"}
+            className="bg-green-500 border border-slate-text hover:bg-green-700 text-white py-1 px-3 rounded-lg"
+          >
+            Add Product
+          </Link>
+          <Link
+            to={"/orders"}
+            className="bg-blue-500 border border-slate-text hover:bg-blue-700 text-white py-1 px-3 rounded-lg"
+          >
+            View Orders
+          </Link>
+          <Link
+            to={"/add-order"}
+            className="bg-purple-500 border border-slate-text hover:bg-purple-700 text-white py-1 px-3 rounded-lg"
+          >
+            Add Order
+          </Link>
+        </div>
         <div className="relative shadow rounded-lg mt-3">
           <table className="w-full text-sm text-left text-gray-500">
             <thead className="text-xs text-gray-700 uppercase bg-gray-100">
